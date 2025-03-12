@@ -12,14 +12,14 @@ El usuario deberá agregar nombres mediante un campo de texto y un botón "Adici
 Los nombres ingresados se mostrarán en una lista visible en la página, y al finalizar, 
 un botón "Sortear Amigo" seleccionará uno de los nombres de forma aleatoria, mostrando el resultado en pantalla.
 Fucionalidades:
-
-   a) Agregar nombres: Los usuarios escribirán el nombre de un amigo en un campo de texto 
+TODO:
+  OK a) Agregar nombres: Los usuarios escribirán el nombre de un amigo en un campo de texto 
        y lo agregarán a una lista visible al hacer clic en "Adicionar".
 
-    b) Validar entrada: Si el campo de texto está vacío,
+  OK  b) Validar entrada: Si el campo de texto está vacío,
      el programa mostrará una alerta pidiendo un nombre válido.
 
-    c) Visualizar la lista: Los nombres ingresados aparecerán en una lista debajo del campo de entrada.
+   ok c) Visualizar la lista: Los nombres ingresados aparecerán en una lista debajo del campo de entrada.
 
     d) Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará aleatoriamente un nombre 
        de la lista y se mostrará en la página.
@@ -28,15 +28,18 @@ Fucionalidades:
 let listaAmigos =[];
 function validaNombreAmigo(){
     let nombreAmigo = document.querySelector('#amigo').value;
-    console.log(nombreAmigo);
+    //console.log(nombreAmigo);
     if (!nombreAmigo){
         alert("Escribe un nombre valido; NO Puede estar vacio");
         
     }else {
         listaAmigos.push(nombreAmigo);
-        console.log(listaAmigos.length);
-        console.log(listaAmigos);
-        document.querySelector('#amigo').value='';
+        //console.log(listaAmigos.length);
+        //console.log(listaAmigos);
+        //document.querySelector('#amigo').value='';
+        nombreAmigo.value='';
+        nombreAmigo.focus();
+
         agregaAmigo();
     }
     return;
@@ -45,8 +48,14 @@ function validaNombreAmigo(){
 
 function agregaAmigo(){
 
+    let listaAmigosHtml= document.querySelector('#listaAmigos');
+    listaAmigosHtml.innerHTML='';
+    // se crea la variable para agregar la lista al HTML, primero el textcontent y despues el append
+    
     for (let index = 0; index < listaAmigos.length; index++) {
-        document.querySelector('#listaAmigos').appendChild(listaAmigos[index]);
+        let li = document.createElement("li");
+        li.textContent = listaAmigos[index];
+        listaAmigosHtml.appendChild(li);
         
     }
     return;
