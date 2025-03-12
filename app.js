@@ -37,8 +37,8 @@ function validaNombreAmigo(){
         //console.log(listaAmigos.length);
         //console.log(listaAmigos);
         //document.querySelector('#amigo').value='';
-        nombreAmigo.value='';
-        nombreAmigo.focus();
+        document.querySelector('#amigo').value='';
+        document.querySelector('#amigo').focus;
 
         agregaAmigo();
     }
@@ -51,7 +51,7 @@ function agregaAmigo(){
     let listaAmigosHtml= document.querySelector('#listaAmigos');
     listaAmigosHtml.innerHTML='';
     // se crea la variable para agregar la lista al HTML, primero el textcontent y despues el append
-    
+
     for (let index = 0; index < listaAmigos.length; index++) {
         let li = document.createElement("li");
         li.textContent = listaAmigos[index];
@@ -59,4 +59,23 @@ function agregaAmigo(){
         
     }
     return;
+}
+
+function sortearAmigo(){
+    if (listaAmigos.length!= 0 ){
+
+    let numAmigo = (Math.floor(Math.random()*listaAmigos.length));
+    console.log(numAmigo);
+    let listaResultado = document.querySelector('#resultado');
+    let li = document.createElement("li");
+    li.textContent = listaAmigos[numAmigo];
+    listaResultado.appendChild(li);
+    }else{
+        alert("La lista esta vacia");
+        document.querySelector('#amigo').focus;
+
+    }
+return;
+
+    
 }
