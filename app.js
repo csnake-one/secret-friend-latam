@@ -38,9 +38,8 @@ function validaNombreAmigo(){
         //console.log(listaAmigos);
         //document.querySelector('#amigo').value='';
         document.querySelector('#amigo').value='';
-        document.querySelector('#amigo').focus;
-
         agregaAmigo();
+        document.querySelector('#amigo').focus();
     }
     return;
 
@@ -65,9 +64,9 @@ function sortearAmigo(){
     if (listaAmigos.length!= 0 ){
 
     let numAmigo = (Math.floor(Math.random()*listaAmigos.length));
-    console.log(numAmigo);
+    //console.log(numAmigo);
     let listaResultado = document.querySelector('#resultado');
-    listaResultado.innerHTML = `El Amigo Sorteado es: ${numAmigo}`;
+    listaResultado.innerHTML = `El Amigo Sorteado es: ${numAmigo +1 }`;
     let li = document.createElement("li");
     li.textContent = listaAmigos[numAmigo];
     listaResultado.appendChild(li);
