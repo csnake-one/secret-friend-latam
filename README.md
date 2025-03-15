@@ -32,5 +32,5 @@ Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo", se seleccionará a
 
 ## Optimizations
 
-Se uso el uso de funciones
+Se hizo uso de funciones. Aunque me parece que se puede optimizar mucho mas
 
