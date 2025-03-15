@@ -67,7 +67,7 @@ function sortearAmigo(){
     let numAmigo = (Math.floor(Math.random()*listaAmigos.length));
     console.log(numAmigo);
     let listaResultado = document.querySelector('#resultado');
-    listaResultado.innerHTML = `El Amigo Sorteado es:`
+    listaResultado.innerHTML = `El Amigo Sorteado es: ${numAmigo}`;
     let li = document.createElement("li");
     li.textContent = listaAmigos[numAmigo];
     listaResultado.appendChild(li);
